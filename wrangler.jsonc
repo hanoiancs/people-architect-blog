@@ -1,27 +1,43 @@
 {
-	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "people-architect-blog",
-	"main": "./src/worker.ts",
-	"compatibility_date": "2026-02-24",
-	"compatibility_flags": ["nodejs_compat"],
-	"d1_databases": [
-		{
-			"binding": "DB",
-			"database_name": "people-architect-db",
-			// Run `wrangler d1 create my-emdash-site` and paste the real ID here for deploy
-			"database_id": "27bf709d-fe3e-448d-9439-f2c3c42873a4",
-		},
-	],
-	"r2_buckets": [
-		{
-			"binding": "MEDIA",
-			"bucket_name": "people-architect-media","preview_bucket_name": "people-architect-media",
-		},
-	],
-	// Worker Loader for plugin sandboxing
-	"worker_loaders": [
-		{
-			"binding": "LOADER",
-		},
-	],
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "people-architect-blog",
+  "main": "./src/worker.ts",
+  "compatibility_date": "2026-02-24",
+  "compatibility_flags": ["nodejs_compat"],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "people-architect-db",
+      // Run `wrangler d1 create my-emdash-site` and paste the real ID here for deploy
+      "database_id": "27bf709d-fe3e-448d-9439-f2c3c42873a4",
+    },
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MEDIA",
+      "bucket_name": "people-architect-media",
+      "preview_bucket_name": "people-architect-media",
+    },
+  ],
+  // Worker Loader for plugin sandboxing
+  "worker_loaders": [
+    {
+      "binding": "LOADER",
+    },
+  ],
+  "observability": {
+    "enabled": false,
+    "head_sampling_rate": 1,
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1,
+      "persist": true,
+      "invocation_logs": false,
+    },
+    "traces": {
+      "enabled": false,
+      "persist": true,
+      "head_sampling_rate": 1,
+    },
+  },
 }
