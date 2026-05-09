@@ -8,9 +8,7 @@ import emdash from "emdash/astro";
 
 export default defineConfig({
   output: "server",
-  adapter: cloudflare({
-    // sessionKVBindingName: "KV_SESSION",
-  }),
+  adapter: cloudflare(),
   experimental: {
     cache: {
       provider: memoryCache(),
