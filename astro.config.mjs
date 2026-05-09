@@ -1,6 +1,6 @@
 import cloudflare from "@astrojs/cloudflare";
 import react from "@astrojs/react";
-import { d1, r2, sandbox } from "@emdash-cms/cloudflare";
+import { cloudflareCache, d1, r2, sandbox } from "@emdash-cms/cloudflare";
 import { formsPlugin } from "@emdash-cms/plugin-forms";
 import { webhookNotifierPlugin } from "@emdash-cms/plugin-webhook-notifier";
 import { defineConfig, fontProviders, memoryCache } from "astro/config";
@@ -11,7 +11,8 @@ export default defineConfig({
   adapter: cloudflare(),
   experimental: {
     cache: {
-      provider: memoryCache(),
+      // provider: memoryCache(),
+      provider: cloudflareCache(),
     },
   },
   image: {
