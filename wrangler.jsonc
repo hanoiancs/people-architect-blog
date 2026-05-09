@@ -19,6 +19,12 @@
       "preview_bucket_name": "people-architect-media",
     },
   ],
+  "kv_namespaces": [
+    {
+      "binding": "KV_SESSION",
+      "id": "0c9c0eb779e94afdbe8190d00c677d65",
+    },
+  ],
   // Worker Loader for plugin sandboxing
   "worker_loaders": [
     {
